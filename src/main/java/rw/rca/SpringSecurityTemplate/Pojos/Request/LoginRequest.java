@@ -1,6 +1,6 @@
 package rw.rca.SpringSecurityTemplate.Pojos.Request;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data

@@ -1,6 +1,6 @@
 package rw.rca.SpringSecurityTemplate.controllers;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
