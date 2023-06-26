@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>rw.rca</groupId>
-	<artifactId>SpringSecurityTemplate</artifactId>
+	<artifactId>next</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringSecurityTemplate</name>
 	<description>Demo project for Spring Boot</description>

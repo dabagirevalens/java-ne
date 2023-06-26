@@ -10,7 +10,7 @@ import java.util.Set;
 @Table(name="users",
         uniqueConstraints={
                 @UniqueConstraint(columnNames = "username"),
-                @UniqueConstraint(columnNames = "email")
+                @UniqueConstraint(columnNames = "name")
         }
 )
 @Data
@@ -19,7 +19,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    private String email;
+    private String name;
+    private String phone;
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -29,13 +30,13 @@ public class User {
     )
     private Set<Role> roles = new HashSet<>();
 
-    public User(String username, String email, String password) {
+    public User(String username, String name, String password, String phone) {
         this.username = username;
-        this.email = email;
+        this.name = name;
         this.password = password;
+        this.phone = phone;
     }
 
     public User() {
-
     }
 }
