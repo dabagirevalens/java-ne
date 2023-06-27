@@ -3,9 +3,11 @@ package rw.rca.next.servicesImp;
 import org.springframework.stereotype.Service;
 import rw.rca.next.models.Product;
 import rw.rca.next.models.Purchase;
+import rw.rca.next.models.Report;
 import rw.rca.next.pojos.request.PurchaseRecordRequest;
 import rw.rca.next.repositories.ProductRepository;
 import rw.rca.next.repositories.PurchaseRepository;
+import rw.rca.next.repositories.ReportRepository;
 import rw.rca.next.services.PurchaseService;
 
 import java.time.LocalDate;
@@ -18,10 +20,12 @@ public class PurchaseServiceImpl implements PurchaseService {
 
     private final PurchaseRepository purchaseRepository;
     private final ProductRepository productRepository;
+    private final ReportRepository reportRepository;
 
-    public PurchaseServiceImpl(PurchaseRepository purchaseRepository, ProductRepository productRepository) {
+    public PurchaseServiceImpl(PurchaseRepository purchaseRepository, ProductRepository productRepository, ReportRepository reportRepository) {
         this.purchaseRepository = purchaseRepository;
         this.productRepository = productRepository;
+        this.reportRepository = reportRepository;
     }
 
     @Override
@@ -70,12 +74,12 @@ public class PurchaseServiceImpl implements PurchaseService {
                 );
 
                 // Save the purchase to the database using the purchaseRepository
-                purchases.add(purchaseRepository.save(purchase));
+                Purchase savedPurchase = purchaseRepository.save(purchase);
+                purchases.add(savedPurchase);
             }
         }
         return purchases;
     }
-
 
 
 }
